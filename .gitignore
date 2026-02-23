@@ -1,6 +1,5 @@
 .dev.vars
 .wrangler/
-README.md
 wrangler.jsonc
 
 # Page templates
