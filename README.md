@@ -9,7 +9,7 @@ The source code for my personal portfolio and web presence.
 
 ## 🛠️ Tech Stack
 - **Frontend**: HTML5, Tailwind CSS, JavaScript
-- **Deployment**: GitHub Pages (or preferred host)
+- **Deployment**: Cloudflare Pages
 
 ## 🔒 Development
 This repository is managed with active privacy monitoring to ensure no sensitive data is committed to the public history.
