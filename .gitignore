@@ -1,7 +1,0 @@
-.dev.vars
-.wrangler/
-wrangler.jsonc
-
-# Page templates
-templates/index.html
-GEMINI.md
