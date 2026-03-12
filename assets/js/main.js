@@ -1,57 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Mobile Menu Elements
-    const btn = document.getElementById('mobile-menu-button');
-    const closeBtn = document.getElementById('close-mobile-menu');
-    const menu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('mobile-menu-overlay');
-    const icon = document.getElementById('mobile-menu-icon');
-
-    function toggleMenu() {
-        if (!menu || !overlay) return;
-        
-        const isOpening = menu.classList.contains('translate-x-full');
-        
-        if (isOpening) {
-            menu.classList.remove('translate-x-full', 'opacity-0');
-            overlay.classList.remove('hidden');
-            if (icon) icon.className = 'fa-solid fa-times h-6 w-6';
-            document.body.style.overflow = 'hidden';
-        } else {
-            menu.classList.add('translate-x-full', 'opacity-0');
-            overlay.classList.add('hidden');
-            if (icon) icon.className = 'fa-solid fa-bars h-6 w-6';
-            document.body.style.overflow = '';
-        }
-    }
-
-    // Attach listeners with null-checks
-    btn?.addEventListener('click', toggleMenu);
-    closeBtn?.addEventListener('click', toggleMenu);
-    overlay?.addEventListener('click', toggleMenu);
-
-    // 2. Stats & Animations Logic (from previous version)
+    // 1. Stats Counter Logic
     const statItems = document.querySelectorAll('.stat-value[data-value]');
     if (statItems.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
+        const statObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
-                    const val = parseInt(target.getAttribute('data-value'));
-                    // Simple count up
-                    let count = 0;
-                    const interval = setInterval(() => {
-                        count += Math.ceil(val / 20);
-                        if (count >= val) {
-                            target.innerText = val;
-                            clearInterval(interval);
+                    const finalVal = parseInt(target.getAttribute('data-value'));
+                    let current = 0;
+                    const duration = 2000; // 2 seconds
+                    const stepTime = Math.abs(Math.floor(duration / finalVal));
+                    
+                    const timer = setInterval(() => {
+                        current += Math.ceil(finalVal / 50); 
+                        if (current >= finalVal) {
+                            target.innerText = finalVal.toLocaleString();
+                            clearInterval(timer);
                         } else {
-                            target.innerText = count;
+                            target.innerText = current.toLocaleString();
                         }
-                    }, 50);
-                    observer.unobserve(target);
+                    }, 30);
+                    statObserver.unobserve(target);
                 }
             });
         }, { threshold: 0.5 });
-        statItems.forEach(item => observer.observe(item));
+        statItems.forEach(item => statObserver.observe(item));
     }
+
+    // 2. Skill Bar Progress Logic
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const progress = bar.getAttribute('data-progress');
+                bar.style.width = progress + '%';
+                skillObserver.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.2 });
+    skillBars.forEach(bar => skillObserver.observe(bar));
 });
