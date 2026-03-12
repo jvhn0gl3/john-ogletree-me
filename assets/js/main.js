@@ -1,69 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- Mobile Menu Logic ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-    const body = document.body;
+    // 1. Mobile Menu Elements
+    const btn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-mobile-menu');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const icon = document.getElementById('mobile-menu-icon');
 
-    const toggleMobileMenu = () => {
-        mobileMenuOverlay?.classList.toggle('hidden');
-        mobileMenu?.classList.toggle('translate-x-full');
-        mobileMenu?.classList.toggle('opacity-0');
-        mobileMenuIcon?.classList.toggle('fa-bars');
-        mobileMenuIcon?.classList.toggle('fa-times');
-        body.classList.toggle('overflow-hidden');
-    };
-
-    [mobileMenuButton, closeMobileMenuButton, mobileMenuOverlay].forEach(btn => {
-        btn?.addEventListener('click', toggleMobileMenu);
-    });
-
-    // --- Profile Stats Counter ---
-    const profileCard = document.getElementById('profile-card');
-    if (profileCard) {
-        const animateStats = () => {
-            const statValues = profileCard.querySelectorAll('.stat-value[data-value]');
-            statValues.forEach(stat => {
-                const finalValue = parseInt(stat.getAttribute('data-value'), 10);
-                const duration = 2000;
-                const startTime = performance.now();
-                const animate = (currentTime) => {
-                    const elapsedTime = currentTime - startTime;
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    stat.textContent = Math.floor(progress * finalValue).toLocaleString();
-                    if (progress < 1) requestAnimationFrame(animate);
-                };
-                requestAnimationFrame(animate);
-            });
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateStats();
-                observer.unobserve(entries[0].target);
-            }
-        }, { threshold: 0.5 });
-        observer.observe(profileCard);
+    function toggleMenu() {
+        if (!menu || !overlay) return;
+        
+        const isOpening = menu.classList.contains('translate-x-full');
+        
+        if (isOpening) {
+            menu.classList.remove('translate-x-full', 'opacity-0');
+            overlay.classList.remove('hidden');
+            if (icon) icon.className = 'fa-solid fa-times h-6 w-6';
+            document.body.style.overflow = 'hidden';
+        } else {
+            menu.classList.add('translate-x-full', 'opacity-0');
+            overlay.classList.add('hidden');
+            if (icon) icon.className = 'fa-solid fa-bars h-6 w-6';
+            document.body.style.overflow = '';
+        }
     }
 
-    // --- Animated Skill Bars ---
-    const skillItems = document.querySelectorAll('.skill-item');
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.skill-progress');
-                const skillPercentage = entry.target.querySelector('.skill-percentage');
-                const targetWidth = progressBar.getAttribute('data-progress');
-                entry.target.classList.add('visible');
-                progressBar.style.width = targetWidth + '%';
-                if(skillPercentage) skillPercentage.textContent = targetWidth + '%';
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // Attach listeners with null-checks
+    btn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+    overlay?.addEventListener('click', toggleMenu);
 
-    skillItems.forEach(item => skillObserver.observe(item));
+    // 2. Stats & Animations Logic (from previous version)
+    const statItems = document.querySelectorAll('.stat-value[data-value]');
+    if (statItems.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const val = parseInt(target.getAttribute('data-value'));
+                    // Simple count up
+                    let count = 0;
+                    const interval = setInterval(() => {
+                        count += Math.ceil(val / 20);
+                        if (count >= val) {
+                            target.innerText = val;
+                            clearInterval(interval);
+                        } else {
+                            target.innerText = count;
+                        }
+                    }, 50);
+                    observer.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+        statItems.forEach(item => observer.observe(item));
+    }
 });
