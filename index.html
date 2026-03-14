@@ -4,21 +4,7 @@
 		<title id="site-title">Echo | John Ogletree - Digital Creator & Designer</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
-		<meta name="keywords" content="John Ogletree, Portfolio, Web Developer, UI/UX Designer, Digital Creator, Astro, JavaScript, Georgia" />
-		<meta name="author" content="John Ogletree" />
-    <link rel="manifest" href="/manifest.json">
-
-		<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://john-ogletree.me/" />
-		<meta property="og:title" content="Echo | John Ogletree - Digital Creator & Designer" />
-		<meta property="og:description" content="Welcome to Echo, the personal portfolio of John Ogletree." />
-		<meta property="og:image" content="https://example.com/social-preview.png" />
-
-	<script id="tailwind-cdn" src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
 		<script id="tailwind-config">
 			tailwind.config = {
 				theme: {
@@ -31,89 +17,72 @@
 							'heading': '#E07A5F',
 							'accent': '#3D87A6',
 							'border': '#5B4F48',
-							'tag-bg': 'rgba(61, 135, 166, 0.15)',
 						},
 						fontFamily: {
-							mono: ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+							mono: ['IBM Plex Mono', 'monospace'],
 						},
 					}
 				}
 			}
 		</script>
-<script id="gtag-js" async src="https://www.googletagmanager.com/gtag/js?id=G-FY6WZRNX8M"></script>
-		<script id="gtag-config">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FY6WZRNX8M');
-</script>
-        <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	</head>
-	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out flex flex-col min-h-screen">
+	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 flex flex-col min-h-screen">
     
     <div id="navbar-container"></div>
 
     <div id="page-container">
-        <main id="main-content" class="mx-auto px-4 py-4 pb-8 transition-filter duration-300 ease-in-out md:px-6 lg:px-8">
+        <main id="main-content" class="mx-auto px-4 py-4 pb-8 md:px-6 lg:px-8">
             
-            <section id="hero-section" class="flex min-h-[60vh] flex-col items-center justify-center py-12 text-center md:py-20 lg:min-h-[70vh]">
+            <section id="hero-section" class="flex min-h-[70vh] flex-col items-center justify-center py-12 text-center">
                 <div id="hero-content" class="max-w-4xl px-4">
-                    <h1 id="hero-title" class="mb-6 font-mono text-4xl font-bold leading-tight text-heading md:text-5xl lg:text-7xl">
-                        Crafting <span id="hero-title-accent" class="text-accent italic">Digital</span> Solutions with <span id="hero-title-precision" class="border-b-4 border-accent">Precision</span>
-                    </h1>
-                    <p id="hero-description" class="mx-auto mb-10 max-w-2xl text-lg text-text-light md:text-xl lg:text-2xl">
+                    <h1 id="typewriter-title" class="mb-6 font-mono text-4xl font-bold leading-tight text-heading md:text-5xl lg:text-7xl min-h-[3em]">
+                        </h1>
+                    
+                    <p id="hero-description" class="mx-auto mb-10 max-w-2xl text-lg text-text-light md:text-xl lg:text-2xl opacity-0 transition-opacity duration-1000">
                         Welcome to Echo, the personal portfolio of John Ogletree. I build modern, high-performance web experiences.
                     </p>
-                    <div id="hero-cta-container" class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                        <a id="hero-cta-primary" href="/projects/index" class="inline-flex w-full items-center justify-center rounded-md bg-accent px-8 py-4 font-mono font-bold text-bg transition-transform duration-200 hover:scale-105 sm:w-auto">Explore Projects</a>
+                    
+                    <div id="hero-cta-container" class="flex flex-col items-center justify-center gap-4 sm:flex-row opacity-0 transition-opacity duration-1000">
+                        <a href="/projects/index" class="inline-flex w-full items-center justify-center rounded-md bg-accent px-8 py-4 font-mono font-bold text-bg transition-transform hover:scale-105 sm:w-auto">
+                            Explore Projects
+                        </a>
                     </div>
                 </div>
             </section>
-            
-            <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 text-heading text-xl">## Profile</h2>
-            <section id="profile-section" class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
-                <div id="profile-card" class="flex flex-col gap-5 rounded-lg border border-border bg-surface p-6">
-                    <div class="flex flex-col items-start gap-6 border-b border-border pb-5 md:flex-row md:items-center">
-                        <div class="flex flex-1 items-center gap-4">
-                            <img src="/assets/images/logo.svg" alt="John Ogletree" class="h-[4.375rem] w-[4.375rem] rounded-full border-2 border-border" />
-                            <div class="flex flex-col">
-                                <h3 class="font-mono font-medium text-heading text-xl">John Ogletree</h3>
-                                <p class="text-text-light">@pxltr30</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </section>
 
-        </main>
+            </main>
     </div>
-
-    <footer id="site-footer" class="mt-16 border-t border-border bg-surface py-12">
-        <div class="mx-auto max-w-7xl px-4 text-center">
-            <p class="text-xs text-text-light/60">&copy; 2026 John Ogletree. Built with precision.</p>
-        </div>
-    </footer>
 
     <script src="navbar.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Profile Stat Animation
-            const profileCard = document.getElementById('profile-card');
-            if (profileCard) {
-                const animateStats = () => {
-                    const statValues = profileCard.querySelectorAll('.stat-value[data-value]');
-                    statValues.forEach(stat => {
-                        const finalValue = parseInt(stat.getAttribute('data-value'), 10);
-                        stat.textContent = finalValue.toLocaleString();
-                    });
-                };
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) { animateStats(); observer.unobserve(entries[0].target); }
-                }, { threshold: 0.5 });
-                observer.observe(profileCard);
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleElement = document.getElementById('typewriter-title');
+            const subtext = document.getElementById('hero-description');
+            const cta = document.getElementById('hero-cta-container');
+            
+            // The text we want to type
+            const text = "Crafting Digital Solutions with Precision_";
+            let i = 0;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    titleElement.innerHTML = text.substring(0, i + 1);
+                    i++;
+                    // Randomized typing speed for realism
+                    setTimeout(typeWriter, Math.random() * 50 + 50);
+                } else {
+                    // Remove the underscore cursor or make it blink after typing
+                    titleElement.innerHTML = text.replace('_', '<span class="animate-pulse">_</span>');
+                    // Fade in the rest of the content
+                    subtext.classList.replace('opacity-0', 'opacity-100');
+                    cta.classList.replace('opacity-0', 'opacity-100');
+                }
             }
+
+            // Start typing after a small delay
+            setTimeout(typeWriter, 500);
         });
     </script>
     </body>
