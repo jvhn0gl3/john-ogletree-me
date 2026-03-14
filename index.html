@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth scroll-pt-20">
 	<head>
-		<!-- Primary Meta Tags -->
 		<title id="site-title">Echo | John Ogletree - Digital Creator & Designer</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,25 +9,21 @@
 		<meta name="author" content="John Ogletree" />
     <link rel="manifest" href="/manifest.json">
 
-		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://john-ogletree.me/" />
 		<meta property="og:title" content="Echo | John Ogletree - Digital Creator & Designer" />
 		<meta property="og:description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
 		<meta property="og:image" content="https://example.com/social-preview.png" />
 
-		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://john-ogletree.me/" />
 		<meta property="twitter:title" content="Echo | John Ogletree - Digital Creator & Designer" />
 		<meta property="twitter:description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
 		<meta property="twitter:image" content="https://example.com/social-preview.png" />
-	<!-- Tailwind CSS CDN -->
-		<script id="tailwind-cdn" src="https://cdn.tailwindcss.com"></script>
+	<script id="tailwind-cdn" src="https://cdn.tailwindcss.com"></script>
 		<script id="tailwind-config">
 			tailwind.config = {
 				theme: {
@@ -58,7 +53,6 @@
 				}
 			}
 		</script>
-<!-- Google tag (gtag.js) -->
 <script id="gtag-js" async src="https://www.googletagmanager.com/gtag/js?id=G-FY6WZRNX8M"></script>
 		<script id="gtag-config">
   window.dataLayer = window.dataLayer || [];
@@ -67,15 +61,12 @@
 
   gtag('config', 'G-FY6WZRNX8M');
 </script>
-        <!-- Updated path for style.css -->
         <link rel="stylesheet" href="/assets/css/style.css">
-        <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	</head>
 	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out flex flex-col min-h-screen"><script src="https://keepandroidopen.org/banner.js"></script>
     <header id="site-header" class="sticky top-0 z-50 flex items-center justify-between gap-4 border-b border-border bg-surface p-4 px-4 md:px-8">
     <div id="header-logo-container" class="flex items-center gap-4">
-        <!-- Desktop View: pxltr30 links to repo, Echo links home -->
         <div id="desktop-logo-wrapper" class="items-center gap-2 text-xl hidden lg:flex">
             <a id="desktop-repo-link" href="https://pxltr30.github.io/pxltr30/" class="font-bold no-underline hover:underline flex items-center gap-1">
                 <div id="logo-text-user">pxltr30</div>
@@ -86,7 +77,6 @@
             </a>
         </div>
 
-        <!-- Mobile View: Entire logo links to home -->
         <div id="mobile-logo-wrapper" class="flex items-center gap-2 text-xl lg:hidden">
             <a id="mobile-home-link" href="/" class="font-bold no-underline hover:underline flex items-center gap-1">
                 <div id="logo-text-user">pxltr30</div>
@@ -143,22 +133,30 @@
                             <div id="profile-text-content" class="flex flex-col">
                                 <h3 id="profile-name" class="m-0 font-mono font-medium leading-tight text-heading text-xl md:text-2xl">John Ogletree</h3>
                                 <p id="profile-handle" class="mb-2 text-base text-text-light">@pxltr30</p>
-                                <div id="social-links" class="flex flex-wrap gap-4">
-                                    <!-- Social links populated by socialsLoader.js -->
+                                <div id="social-links" class="flex flex-wrap gap-4 mt-1">
+                                    <a href="https://github.com/pxltr30" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-accent transition-colors">
+                                        <i class="fa-brands fa-github text-xl"></i>
+                                    </a>
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-accent transition-colors">
+                                        <i class="fa-brands fa-linkedin text-xl"></i>
+                                    </a>
+                                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-accent transition-colors">
+                                        <i class="fa-brands fa-x-twitter text-xl"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div id="profile-stats" class="flex w-full flex-row gap-3 md:w-auto md:min-w-[9.375rem] md:flex-col">
                             <div id="stat-repos" class="flex w-full flex-col items-center justify-between md:flex-row md:items-baseline">
-                                <span id="stat-repos-value" class="text-2xl font-bold text-heading" data-value="42">0</span>
+                                <span id="stat-repos-value" class="stat-value text-2xl font-bold text-heading" data-value="42">0</span>
                                 <span id="stat-repos-label" class="text-xs uppercase tracking-wider text-text-light">Repos</span>
                             </div>
                             <div id="stat-contribs" class="flex w-full flex-col items-center justify-between md:flex-row md:items-baseline">
-                                <span id="stat-contribs-value" class="text-2xl font-bold text-heading" data-value="1480">0</span>
+                                <span id="stat-contribs-value" class="stat-value text-2xl font-bold text-heading" data-value="1480">0</span>
                                 <span id="stat-contribs-label" class="text-xs uppercase tracking-wider text-text-light">Contribs</span>
                             </div>
                             <div id="stat-followers" class="flex w-full flex-col items-center justify-between md:flex-row md:items-baseline">
-                                <span id="stat-followers-value" class="text-2xl font-bold text-heading" data-value="215">0</span>
+                                <span id="stat-followers-value" class="stat-value text-2xl font-bold text-heading" data-value="215">0</span>
                                 <span id="stat-followers-label" class="text-xs uppercase tracking-wider text-text-light">Followers</span>
                             </div>
                         </div>
@@ -268,7 +266,7 @@
                             <i id="icon-strategy-svg" class="fa-solid fa-chess text-3xl"></i>
                         </div>
                         <h3 id="service-title-strategy" class="m-0 font-mono text-xl font-bold text-accent">Digital Strategy & Consultation</h3>
-                        <p id="service-desc-strategy" class="mb-4">Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
+                        <p id="service-desc-strategy" class="mb-4 text-[0.95rem] leading-relaxed text-text-light">Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
                     </div>
                 </div>
                 <div id="all-services-link-container" class="mt-8 text-center">
@@ -287,7 +285,7 @@
                         </div>
                         <div id="project-echo-content" class="flex flex-grow flex-col p-6">
                             <h3 id="project-echo-title" class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
-                            <p id="project-echo-desc" class="mb-4">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
+                            <p id="project-echo-desc" class="mb-4 text-[0.95rem] text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
                             <div id="project-echo-tags" class="flex flex-wrap gap-2">
                                 <span id="tag-echo-astro" class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
                                 <span id="tag-echo-css" class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
@@ -301,7 +299,7 @@
                         </div>
                         <div id="project-quantumleap-content" class="flex flex-grow flex-col p-6">
                             <h3 id="project-quantumleap-title" class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
-                            <p id="project-quantumleap-desc" class="mb-4">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
+                            <p id="project-quantumleap-desc" class="mb-4 text-[0.95rem] text-text-light">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
                             <div id="project-quantumleap-tags" class="flex flex-wrap gap-2">
                                 <span id="tag-quantumleap-figma" class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
                                 <span id="tag-quantumleap-uiux" class="rounded-full bg-[rgba(61, 135, 166, 0.15)] py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
@@ -315,7 +313,7 @@
                         </div>
                         <div id="project-codegenius-content" class="flex flex-grow flex-col p-6">
                             <h3 id="project-codegenius-title" class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
-                            <p id="project-codegenius-desc" class="mb-4">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
+                            <p id="project-codegenius-desc" class="mb-4 text-[0.95rem] text-text-light">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
                             <div id="project-codegenius-tags" class="flex flex-wrap gap-2">
                                 <span id="tag-codegenius-ui" class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
                                 <span id="tag-codegenius-ux" class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
@@ -335,7 +333,7 @@
                 <div id="connect-grid" class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
                     <div id="contact-form-card" class="rounded-lg border border-border bg-surface p-8">
                         <h3 id="contact-form-title" class="m-0 mb-2 font-mono text-xl font-bold text-accent">Contact Me</h3>
-                        <p id="contact-form-desc" class="mb-4">Have a question or a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
+                        <p id="contact-form-desc" class="mb-4 text-text-light">Have a question or a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
                         <form id="contact-form" action="#" method="POST">
                             <div id="form-group-name" class="mb-6">
                                 <label id="label-name" for="name" class="mb-2 block text-sm font-medium text-text">Name</label>
@@ -362,7 +360,7 @@
                             </div>
                             <button id="newsletter-submit" type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Subscribe</button>
                         </form>
-                        <p id="newsletter-privacy" class="mt-6 mb-0 text-center text-xs text-text-light">Your privacy is important. I'll never share your email.</p>
+                        <p id="newsletter-privacy" class="mt-6 mb-0 text-center text-xs text-text-light/70">Your privacy is important. I'll never share your email.</p>
                     </div>
                 </div>
             </section>
@@ -377,7 +375,7 @@
                             <div id="post-dune-content" class="flex flex-col p-6">
                                 <p id="post-dune-meta" class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
                                 <h3 id="post-dune-title" class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">Dune: A Masterclass in World-Building</h3>
-                                <p id="post-dune-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
+                                <p id="post-dune-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative.</p>
                                 <div id="post-dune-tags" class="flex flex-wrap gap-2">
                                     <span id="tag-dune-film" class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">Film</span>
                                     <span id="tag-dune-scifi" class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Sci-Fi</span>
@@ -391,7 +389,7 @@
                              <div id="post-astrobook-content" class="flex flex-col p-6">
                                 <p id="post-astrobook-meta" class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
                                 <h3 id="post-astrobook-title" class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">The M4 AstroBook: A Developer's Dream?</h3>
-                                <p id="post-astrobook-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
+                                <p id="post-astrobook-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance and suitability for web development.</p>
                                 <div id="post-astrobook-tags" class="flex flex-wrap gap-2">
                                     <span id="tag-astrobook-tech" class="rounded-full bg-[rgba(0,95,115,0.15)] py-1 px-3 text-xs font-medium text-[#005f73]">Tech</span>
                                     <span id="tag-astrobook-apple" class="rounded-full bg-[rgba(147,161,161,0.2)] py-1 px-3 text-xs font-medium text-[#839496]">Apple</span>
@@ -405,7 +403,7 @@
                             <div id="post-augusta-content" class="flex flex-col p-6">
                                 <p id="post-augusta-meta" class="mb-2 text-xs text-text-light">Personal Essay · 5 min read</p>
                                 <h3 id="post-augusta-title" class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">Finding Creative Flow in Augusta</h3>
-                                <p id="post-augusta-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
+                                <p id="post-augusta-excerpt" class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">How the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
                                 <div id="post-augusta-tags" class="flex flex-wrap gap-2">
                                     <span id="tag-augusta-life" class="rounded-full bg-[rgba(217,91,138,0.15)] py-1 px-3 text-xs font-medium text-[#D95B8A]">Life</span>
                                     <span id="tag-augusta-creativity" class="rounded-full bg-[rgba(108,113,196,0.2)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Creativity</span>
@@ -476,7 +474,7 @@
                     <details id="faq-technologies" class="mb-4 rounded-lg border border-border bg-surface p-6">
                         <summary id="faq-technologies-summary" class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">What technologies are you most excited about right now?</summary>
                          <div id="faq-technologies-content" class="pt-4 leading-relaxed text-text-light">
-                            <p id="faq-technologies-text">I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools.</p>
+                            <p id="faq-technologies-text">I'm particularly excited about the evolution of edge computing and frameworks like Astro. On the design front, I'm closely following advancements in generative AI tools.</p>
                         </div>
                     </details>
                     <details id="faq-location" class="mb-4 rounded-lg border border-border bg-surface p-6">
@@ -488,7 +486,7 @@
                     <details id="faq-work" class="mb-4 rounded-lg border border-border bg-surface p-6">
                         <summary id="faq-work-summary" class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">Can we see more of your work?</summary>
                          <div id="faq-work-content" class="pt-4 leading-relaxed text-text-light">
-                            <p id="faq-work-text">Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a id="faq-projects-link" href="/projects/index">creations page</a>.</p>
+                            <p id="faq-work-text">Absolutely! You can view a more extensive collection of my work on the dedicated <a id="faq-projects-link" href="/projects/index" class="text-accent underline hover:text-heading transition-colors">creations page</a>.</p>
                         </div>
                     </details>
                 </div>
@@ -500,7 +498,6 @@
     <footer id="site-footer" class="mt-16 border-t border-border bg-surface py-12">
     <div id="footer-container" class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div id="footer-grid" class="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <!-- Brand Section -->
             <div id="footer-brand" class="flex flex-col gap-4">
                 <div id="footer-logo-wrapper" class="flex items-center gap-2 text-xl font-bold text-heading">
                     <i id="footer-logo-icon" class="fa-solid fa-book-open"></i>
@@ -509,12 +506,22 @@
                 <p id="footer-tagline" class="max-w-xs text-sm leading-relaxed text-text-light">
                     Building the next generation of digital experiences through design, code, and strategy.
                 </p>
-                <div id="footer-socials" class="flex gap-4">
-                    <!-- Social links populated by socialsLoader.js -->
+                <div id="footer-socials" class="flex gap-5 mt-2">
+                    <a href="https://github.com/pxltr30" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-heading transition-colors">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-heading transition-colors">
+                        <i class="fa-brands fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-heading transition-colors">
+                        <i class="fa-brands fa-x-twitter text-lg"></i>
+                    </a>
+                    <a href="mailto:contact@john-ogletree.me" class="text-text-light hover:text-heading transition-colors">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Quick Links -->
             <div id="footer-links-container">
                 <h4 id="footer-links-title" class="mb-6 font-mono text-xs font-bold uppercase tracking-widest text-accent">Navigation</h4>
                 <nav id="footer-nav" class="grid grid-cols-2 gap-y-3 gap-x-8">
@@ -527,7 +534,6 @@
                 </nav>
             </div>
 
-            <!-- Newsletter/Status -->
             <div id="footer-status">
                 <h4 id="footer-status-title" class="mb-6 font-mono text-xs font-bold uppercase tracking-widest text-accent">System Status</h4>
                 <div id="status-card" class="rounded border border-border bg-bg/50 p-4">
@@ -543,7 +549,6 @@
             </div>
         </div>
 
-        <!-- Bottom Bar -->
         <div id="footer-bottom" class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-border pt-8 md:flex-row">
             <p id="footer-copyright" class="text-xs text-text-light/60">
                 &copy; 2026 John Ogletree. All rights reserved. Built with precision.
@@ -595,10 +600,10 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progressBar = entry.target.querySelector('.skill-progress');
-                    const skillPercentage = entry.target.querySelector('.skill-percentage'); // Get the skill percentage span
+                    const skillPercentage = entry.target.querySelector('.skill-percentage');
                     const targetWidth = progressBar.getAttribute('data-progress');
-                    progressBar.style.width = targetWidth + '%'; // Add '%' to the width
-                    skillPercentage.textContent = targetWidth + '%'; // Update the text content of the skill percentage span
+                    progressBar.style.width = targetWidth + '%';
+                    skillPercentage.textContent = targetWidth + '%';
                     skillObserver.unobserve(entry.target);
                 }
             });
@@ -608,12 +613,7 @@
             skillObserver.observe(item);
         });
     });
-
-
-
 </script>
-<!-- Updated path for navbarLoader.js -->
-
 
 <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
 <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-surface shadow-lg z-50 p-6 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
@@ -634,7 +634,7 @@
         <a href="/#connect-section" class="text-text-light hover:text-heading no-underline">connect</a>
         <a href="/docs" class="text-text-light hover:text-heading no-underline">docs</a>
         <a href="/resume/index" class="text-text-light hover:text-heading no-underline">resume</a>
-        <a href="/directory" class="text-text-light hover:text-heading no-underline">directory</a>
+        <a href="/sitemap.xml" class="text-text-light hover:text-heading no-underline">directory</a>
     </div>
 </nav>
 
@@ -652,18 +652,12 @@
             mobileMenu.classList.toggle('translate-x-full');
             mobileMenuIcon.classList.toggle('fa-bars');
             mobileMenuIcon.classList.toggle('fa-times');
-            body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+            body.classList.toggle('overflow-hidden');
         };
 
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', toggleMobileMenu);
-        }
-        if (closeMobileMenuButton) {
-            closeMobileMenuButton.addEventListener('click', toggleMobileMenu);
-        }
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-        }
+        if (mobileMenuButton) mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        if (closeMobileMenuButton) closeMobileMenuButton.addEventListener('click', toggleMobileMenu);
+        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
     });
 </script>
 
@@ -679,4 +673,5 @@
       }
     </script>
     </body>
-    </html>
+</html>
+
