@@ -1,11 +1,11 @@
 export const Footer = {
     render() {
         return `
-            <footer id="site-footer" class="mt-16 border-t border-border bg-surface py-12">
-                <div id="footer-container" class="mx-auto max-w-7xl px-10 md:px-10 lg:px-10">
-                    <div id="footer-grid" class="grid grid-cols-1 gap-12 md:grid-cols-3">
+            <footer class="mt-16 border-t border-border bg-surface py-12">
+                <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
                         <!-- Brand -->
-                        <div id="footer-brand" class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
                             <div class="flex items-center gap-2 text-xl font-bold text-heading">
                                 <i class="fa-solid fa-book-open"></i>
                                 <span>Echo</span>
@@ -16,7 +16,7 @@ export const Footer = {
                             <div class="flex gap-5 mt-2">
                                 ${this.socialLinks.map(link => `
                                     <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
-                                       class="text-text-light hover:text-heading transition-colors">
+                                       class="text-text-light hover:text-heading transition-colors duration-200">
                                         <i class="${link.icon} text-lg"></i>
                                     </a>
                                 `).join('')}
@@ -24,11 +24,11 @@ export const Footer = {
                         </div>
                         
                         <!-- Navigation -->
-                        <div id="footer-links-container">
+                        <div>
                             <h4 class="mb-6 font-mono text-xs font-bold uppercase tracking-widest text-accent">Navigation</h4>
                             <nav class="grid grid-cols-2 gap-y-3 gap-x-8">
                                 ${this.navLinks.map(link => `
-                                    <a href="${link.url}" class="text-sm text-text-light hover:text-heading no-underline transition-colors">
+                                    <a href="${link.url}" class="text-sm text-text-light hover:text-heading no-underline transition-colors duration-200">
                                         ${link.label}
                                     </a>
                                 `).join('')}
@@ -36,7 +36,7 @@ export const Footer = {
                         </div>
                         
                         <!-- Status -->
-                        <div id="footer-status">
+                        <div>
                             <h4 class="mb-6 font-mono text-xs font-bold uppercase tracking-widest text-accent">System Status</h4>
                             <div class="rounded border border-border bg-bg/50 p-4">
                                 <div class="flex items-center gap-3">
@@ -54,13 +54,13 @@ export const Footer = {
                     </div>
                     
                     <!-- Bottom Bar -->
-                    <div id="footer-bottom" class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-border pt-8 md:flex-row">
+                    <div class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-border pt-8 md:flex-row">
                         <p class="text-xs text-text-light/60">
                             &copy; 2026 John Ogletree. All rights reserved. Built with precision.
                         </p>
                         <div class="flex gap-6">
-                            <a href="#" class="text-xs text-text-light/60 hover:text-heading no-underline transition-colors">Privacy Policy</a>
-                            <a href="#" class="text-xs text-text-light/60 hover:text-heading no-underline transition-colors">Terms of Service</a>
+                            <a href="#" class="text-xs text-text-light/60 hover:text-heading no-underline transition-colors duration-200">Privacy Policy</a>
+                            <a href="#" class="text-xs text-text-light/60 hover:text-heading no-underline transition-colors duration-200">Terms of Service</a>
                         </div>
                     </div>
                 </div>

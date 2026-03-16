@@ -12,13 +12,53 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="js/styles/main.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg': '#3B2F2A',
+                        'surface': '#4A3E38',
+                        'text': '#F0EAD6',
+                        'text-light': '#D4C9A8',
+                        'heading': '#E07A5F',
+                        'accent': '#3D87A6',
+                        'border': '#5B4F48',
+                    },
+                    fontFamily: {
+                        mono: ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    keyframes: {
+                        blink: {
+                            '50%': { backgroundColor: 'transparent' }
+                        },
+                        ping: {
+                            '75%, 100%': {
+                                transform: 'scale(2)',
+                                opacity: '0'
+                            }
+                        }
+                    },
+                    animation: {
+                        blink: 'blink 1s steps(1) infinite',
+                        ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Only minimal required overrides - everything else uses Tailwind */
+        .skill-progress {
+            width: 0%;
+            transition: width 1s ease;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-bg text-text font-mono antialiased">
     <div id="app-root"></div>
-    
-    <!-- ES Modules -->
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

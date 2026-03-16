@@ -1,14 +1,14 @@
 export const Resume = {
     render() {
         return `
-            <section id="resume-section" class="resume-overview">
-                <h2 id="resume-heading" class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
+            <section class="resume-overview">
+                <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
                     Credentials Overview
                 </h2>
                 
-                <div id="resume-grid" class="grid grid-cols-1 gap-10 lg:grid-cols-[2fr,1fr]">
+                <div class="grid grid-cols-1 gap-10 lg:grid-cols-[2fr,1fr]">
                     <!-- Experience -->
-                    <div id="experience-container">
+                    <div>
                         <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Experience</h3>
                         ${this.experience.map(exp => `
                             <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
@@ -19,8 +19,8 @@ export const Resume = {
                     </div>
                     
                     <!-- Education & Awards -->
-                    <div id="education-awards-container" class="flex flex-col gap-6">
-                        <div id="education-section">
+                    <div class="flex flex-col gap-6">
+                        <div>
                             <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Education</h3>
                             ${this.education.map(edu => `
                                 <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
@@ -30,7 +30,7 @@ export const Resume = {
                             `).join('')}
                         </div>
                         
-                        <div id="awards-section">
+                        <div>
                             <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Awards</h3>
                             ${this.awards.map(award => `
                                 <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
@@ -42,8 +42,8 @@ export const Resume = {
                     </div>
                 </div>
                 
-                <div id="full-resume-link-container" class="mt-8 text-center">
-                    <a id="full-resume-link" href="/resume/index" 
+                <div class="mt-8 text-center">
+                    <a href="/resume/index" 
                        class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">
                         View Full Résumé
                     </a>

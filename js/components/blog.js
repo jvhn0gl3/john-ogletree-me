@@ -1,14 +1,15 @@
 export const Blog = {
     render() {
         return `
-            <section id="blog-section" class="log-overview">
-                <h2 id="blog-heading" class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
+            <section class="log-overview">
+                <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
                     Log Overview
                 </h2>
                 
-<div id="blog-grid" class="grid grid-cols-repeat-300 gap-6">                    ${this.posts.map(post => `
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+                    ${this.posts.map(post => `
                         <article>
-                            <a href="${post.url}" class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                            <a href="${post.url}" class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                                 <div class="flex flex-col p-6">
                                     <p class="mb-2 text-xs text-text-light">${post.meta}</p>
                                     <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">
@@ -29,8 +30,8 @@ export const Blog = {
                     `).join('')}
                 </div>
                 
-                <div id="all-posts-link-container" class="mt-8 text-center">
-                    <a id="all-posts-link" href="/thoughts/index" 
+                <div class="mt-8 text-center">
+                    <a href="/thoughts/index" 
                        class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">
                         View All Posts
                     </a>

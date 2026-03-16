@@ -1,25 +1,25 @@
 export const Profile = {
     render() {
         return `
-            <h2 id="profile-heading" class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
+            <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
                 Profile
             </h2>
             
-            <section id="profile-section" class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+            <section class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
                 <!-- Profile Card -->
                 <div id="profile-card" class="flex flex-col gap-5 rounded-lg border border-border bg-surface p-6">
-                    <div id="profile-card-header" class="flex flex-col items-start gap-6 border-b border-border pb-5 md:flex-row md:items-center">
-                        <div id="profile-info" class="flex flex-1 items-center gap-4">
-                            <img id="profile-image" src="/assets/images/logo.svg" alt="John Ogletree" 
+                    <div class="flex flex-col items-start gap-6 border-b border-border pb-5 md:flex-row md:items-center">
+                        <div class="flex flex-1 items-center gap-4">
+                            <img src="/assets/images/logo.svg" alt="John Ogletree" 
                                  class="h-[4.375rem] w-[4.375rem] rounded-full border-2 border-border object-cover"
                                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'70\\' height=\\'70\\' viewBox=\\'0 0 100 100\\'%3E%3Ccircle cx=\\'50\\' cy=\\'50\\' r=\\'45\\' fill=\\'%233D87A6\\' /%3E%3Ctext x=\\'50\\' y=\\'70\\' font-size=\\'50\\' text-anchor=\\'middle\\' fill=\\'%23F0EAD6\\' font-family=\\'monospace\\'%3E👤%3C/text%3E%3C/svg%3E'">
-                            <div id="profile-text-content" class="flex flex-col">
-                                <h3 id="profile-name" class="m-0 font-mono font-medium leading-tight text-heading text-xl md:text-2xl">John Ogletree</h3>
-                                <p id="profile-handle" class="mb-2 text-base text-text-light">@pxltr30</p>
-                                <div id="social-links" class="flex flex-wrap gap-4 mt-1">
+                            <div class="flex flex-col">
+                                <h3 class="m-0 font-mono font-medium leading-tight text-heading text-xl md:text-2xl">John Ogletree</h3>
+                                <p class="mb-2 text-base text-text-light">@pxltr30</p>
+                                <div class="flex flex-wrap gap-4 mt-1">
                                     ${this.socialLinks.map(link => `
                                         <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
-                                           class="text-text-light hover:text-accent transition-colors">
+                                           class="text-text-light hover:text-accent transition-colors duration-200">
                                             <i class="${link.icon} text-xl"></i>
                                         </a>
                                     `).join('')}
@@ -28,7 +28,7 @@ export const Profile = {
                         </div>
                         
                         <!-- Stats -->
-                        <div id="profile-stats" class="flex w-full flex-row gap-3 md:w-auto md:min-w-[9.375rem] md:flex-col">
+                        <div class="flex w-full flex-row gap-3 md:w-auto md:min-w-[9.375rem] md:flex-col">
                             ${this.stats.map(stat => `
                                 <div class="flex w-full flex-col items-center justify-between md:flex-row md:items-baseline">
                                     <span class="stat-value text-2xl font-bold text-heading" data-value="${stat.value}">0</span>
@@ -39,7 +39,7 @@ export const Profile = {
                     </div>
                     
                     <!-- Language Skills -->
-                    <div id="language-skills" class="flex flex-col gap-3 border-t border-border pt-5 md:min-w-[9.375rem]">
+                    <div class="flex flex-col gap-3 border-t border-border pt-5 md:min-w-[9.375rem]">
                         ${this.languages.map(lang => `
                             <div class="flex w-full items-baseline justify-between">
                                 <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
@@ -53,10 +53,10 @@ export const Profile = {
                 </div>
                 
                 <!-- Skill Bars -->
-                <div id="skill-bars-container" class="flex flex-col gap-6">
-                    <div id="design-skills" class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div class="flex flex-col gap-6">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         ${this.skills.map(skill => `
-                            <div class="skill-item flex flex-col gap-3 rounded-lg border border-border bg-surface p-6 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                            <div class="skill-item flex flex-col gap-3 rounded-lg border border-border bg-surface p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
                                         <i class="${skill.icon} text-accent text-xl"></i>
@@ -73,8 +73,8 @@ export const Profile = {
                     </div>
                     
                     <!-- Bio Link -->
-                    <div id="bio-link-container">
-                        <a id="bio-link" href="/about.html" 
+                    <div>
+                        <a href="/about.html" 
                            class="box-border flex w-full items-center justify-center rounded-md border border-heading bg-transparent py-3 px-6 text-center font-mono font-bold text-heading no-underline transition-colors duration-200 hover:bg-heading hover:text-text">
                             More About Me
                         </a>

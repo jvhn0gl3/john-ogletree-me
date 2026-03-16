@@ -1,13 +1,14 @@
 export const Projects = {
     render() {
         return `
-            <section id="projects-section" class="projects-overview">
-                <h2 id="projects-heading" class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
+            <section class="projects-overview">
+                <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">
                     Creations Overview
                 </h2>
                 
-<div id="projects-grid" class="grid grid-cols-repeat-300 gap-6">                    ${this.projects.map(project => `
-                        <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+                    ${this.projects.map(project => `
+                        <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                             <div class="aspect-video overflow-hidden">
                                 <img src="${project.image}" alt="${project.title}" 
                                      class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
@@ -30,8 +31,8 @@ export const Projects = {
                     `).join('')}
                 </div>
                 
-                <div id="all-projects-link-container" class="mt-8 text-center">
-                    <a id="all-projects-link" href="/projects/index" 
+                <div class="mt-8 text-center">
+                    <a href="/projects/index" 
                        class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">
                         View All Projects
                     </a>
