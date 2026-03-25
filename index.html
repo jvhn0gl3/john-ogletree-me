@@ -8,6 +8,10 @@
     <meta name="keywords" content="John Ogletree, Portfolio, Web Developer, UI/UX Designer">
     <meta name="author" content="John Ogletree">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="/logo.jpg">
+    
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -185,7 +189,10 @@
                 <div id="profile-card" class="flex flex-col gap-5 rounded-lg border border-border bg-surface p-6">
                     <div class="flex flex-col items-start gap-6 border-b border-border pb-5 md:flex-row md:items-center">
                         <div class="flex flex-1 items-center gap-4">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%233D87A6' /%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23F0EAD6' font-family='monospace'%3E👤%3C/text%3E%3C/svg%3E" alt="John Ogletree" class="h-[4.375rem] w-[4.375rem] rounded-full border-2 border-border object-cover">
+                            <!-- Profile Picture using /logo.jpg -->
+                            <img src="/logo.jpg" alt="John Ogletree" 
+                                 class="h-[4.375rem] w-[4.375rem] rounded-full border-2 border-border object-cover"
+                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%233D87A6\' /%3E%3Ctext x=\'50\' y=\'70\' font-size=\'50\' text-anchor=\'middle\' fill=\'%23F0EAD6\' font-family=\'monospace\'%3E👤%3C/text%3E%3C/svg%3E'">
                             <div class="flex flex-col">
                                 <h3 class="m-0 font-mono font-medium leading-tight text-heading text-xl md:text-2xl">John Ogletree</h3>
                                 <p class="mb-2 text-base text-text-light">@pxltr30</p>
