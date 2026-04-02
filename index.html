@@ -112,14 +112,14 @@
             backdrop-filter: blur(20px);
             border-right: 1px solid rgba(224, 122, 95, 0.3);
             z-index: 100;
-            transform: translateX(0);
+            transform: translateX(-260px);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
             scrollbar-width: thin;
         }
         
-        .sidebar.collapsed {
-            transform: translateX(-260px);
+        .sidebar.expanded {
+            transform: translateX(0);
         }
         
         .sidebar::-webkit-scrollbar {
@@ -149,11 +149,11 @@
         /* Toggle button */
         .sidebar-toggle {
             position: fixed;
-            left: 270px;
+            left: 20px;
             top: 20px;
             z-index: 101;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: linear-gradient(135deg, #E07A5F, #3D87A6);
             border-radius: 50%;
             display: flex;
@@ -169,8 +169,8 @@
             box-shadow: 0 6px 20px rgba(224,122,95,0.4);
         }
         
-        .sidebar-toggle.collapsed {
-            left: 20px;
+        .sidebar-toggle.expanded {
+            left: 270px;
         }
         
         /* Nav link animations */
@@ -221,7 +221,7 @@
             transition: transform 0.3s ease;
         }
         
-        .sidebar-toggle.collapsed .rotate-icon {
+        .sidebar-toggle.expanded .rotate-icon {
             transform: rotate(180deg);
         }
         
@@ -229,11 +229,41 @@
         .glow-on-hover:hover {
             filter: drop-shadow(0 0 8px rgba(224,122,95,0.6));
         }
+        
+        /* Welcome overlay for first-time visitors */
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .welcome-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .welcome-card {
+            background: linear-gradient(135deg, #4A3E38, #3B2F2A);
+            border: 1px solid rgba(224,122,95,0.5);
+            max-width: 400px;
+            animation: slideIn 0.5s ease-out;
+        }
     </style>
 </head>
 <body class="bg-bg text-text font-mono antialiased overflow-x-hidden">
 
-    <!-- SURPRISE: VERTICAL SIDEBAR NAVIGATION -->
+    <!-- SURPRISE: VERTICAL SIDEBAR NAVIGATION (HIDDEN BY DEFAULT) -->
     <aside class="sidebar" id="sidebar">
         <div class="flex flex-col h-full">
             <!-- Sidebar Header -->
@@ -349,11 +379,11 @@
     
     <!-- Sidebar Toggle Button -->
     <div class="sidebar-toggle" id="sidebarToggle">
-        <i class="fa-solid fa-chevron-left text-text text-sm rotate-icon"></i>
+        <i class="fa-solid fa-bars text-text text-sm rotate-icon"></i>
     </div>
 
     <!-- MAIN CONTENT -->
-    <main id="mainContent" class="main-expanded">
+    <main id="mainContent" class="main-collapsed">
         <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-8">
             <!-- HERO SECTION -->
             <section id="hero" class="flex min-h-[60vh] flex-col items-center justify-center py-12 text-center md:py-20 lg:min-h-[70vh] scroll-mt-8">
@@ -486,25 +516,25 @@
     </main>
 
     <script>
-        // Sidebar Toggle Functionality
+        // Sidebar Toggle Functionality - HIDDEN BY DEFAULT
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('sidebarToggle');
         const mainContent = document.getElementById('mainContent');
         
-        let isCollapsed = false;
+        let isExpanded = false; // Start collapsed (hidden)
         
         toggleBtn.addEventListener('click', () => {
-            isCollapsed = !isCollapsed;
-            if (isCollapsed) {
-                sidebar.classList.add('collapsed');
-                mainContent.classList.remove('main-expanded');
-                mainContent.classList.add('main-collapsed');
-                toggleBtn.classList.add('collapsed');
-            } else {
-                sidebar.classList.remove('collapsed');
+            isExpanded = !isExpanded;
+            if (isExpanded) {
+                sidebar.classList.add('expanded');
                 mainContent.classList.remove('main-collapsed');
                 mainContent.classList.add('main-expanded');
-                toggleBtn.classList.remove('collapsed');
+                toggleBtn.classList.add('expanded');
+            } else {
+                sidebar.classList.remove('expanded');
+                mainContent.classList.remove('main-expanded');
+                mainContent.classList.add('main-collapsed');
+                toggleBtn.classList.remove('expanded');
             }
         });
         
@@ -517,13 +547,13 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Auto-collapse sidebar on mobile view
-                    if (window.innerWidth < 1024) {
-                        sidebar.classList.add('collapsed');
+                    // Auto-collapse sidebar on mobile after selection
+                    if (window.innerWidth < 1024 && isExpanded) {
+                        sidebar.classList.remove('expanded');
                         mainContent.classList.remove('main-expanded');
                         mainContent.classList.add('main-collapsed');
-                        toggleBtn.classList.add('collapsed');
-                        isCollapsed = true;
+                        toggleBtn.classList.remove('expanded');
+                        isExpanded = false;
                     }
                 }
             });
@@ -583,7 +613,7 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
-                if(scrollY >= sectionTop) current = section.getAttribute('id');
+                if(window.scrollY >= sectionTop) current = section.getAttribute('id');
             });
             navLinks.forEach(link => {
                 link.classList.remove('nav-active');
